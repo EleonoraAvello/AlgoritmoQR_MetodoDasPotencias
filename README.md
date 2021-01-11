@@ -1,5 +1,5 @@
-# Projeto1CN
-- Projeto 1 de Cálculo Numérico. Deadline: 13/12/2020
+# Projeto2CN
+- Projeto 2 de Cálculo Numérico. Deadline: 25/01/2021
 
 # Preparando o ambiente
 - Instale o que se pede neste vídeo : https://www.youtube.com/watch?v=J5uMzyaniag&feature=youtu.be&ab_channel=AbelSiqueira
