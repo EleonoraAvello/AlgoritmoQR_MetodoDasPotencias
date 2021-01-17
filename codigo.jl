@@ -89,3 +89,15 @@ algoritmo_QR([1 1 1; 1 2 1; 1 1 3])
 # ou seja, temos uma matriz onde cada elemento fora da diagonal principal é menor, 
 # em módulo, que a tolerância inserida 1e-10 depois de 24 iterações
 # na diagonal principal temos aproximações para os autovalores da matriz inserida
+""" 
+função para descobrir os autovetores com base nos autovalores
+
+ideia:
+
+seja M a matriz de autovalores
+
+Q = Q0 * Q1 * Q2 * ... * Qk
+A ≈ Q * Λ * Qt 
+"""
+function autovetores(M::Matrix)
+end
