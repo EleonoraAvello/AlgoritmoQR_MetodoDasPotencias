@@ -46,7 +46,7 @@ seja M a matriz de entrada
         II) M_k = R_k * Q_k
 
 """
-function algoritmo_QR(M)
+function algoritmo_QR(M::Matrix, tol = 1e-10)
     # M deve ser uma matriz quadrada
     m, n = size(M)
     if m != n
@@ -62,7 +62,7 @@ function algoritmo_QR(M)
         diagonal = true
         for i in 1:m
             for j in 1:n
-                if i != j && M[i,j] != 0
+                if i != j && abs(M[i,j]) > tol
                     diagonal = false
                 end
             end
@@ -76,5 +76,13 @@ function algoritmo_QR(M)
     end
     return M, iter
 end
+
+# exemplo com uma matriz 3X3 não diagonal:
 algoritmo_QR([1 1 1; 1 2 1; 1 1 3])
-# ainda não está funcionando, não sei por quê
+# note que a função retorna o seguinte:
+# ([4.214319743377534 -1.4637636228298152e-11 9.193865354505486e-16;
+#  -1.4638092510092044e-11 1.4608111271891115 -2.0393888880981727e-16;
+#   2.8361411921016563e-26 -8.928249488099567e-16 0.3248691294333538], 24)
+# ou seja, temos uma matriz onde cada elemento fora da diagonal principal é menor, 
+# em módulo, que a tolerância inserida 1e-10 depois de 24 iterações
+# na diagonal principal temos aproximações para os autovalores da matriz inserida
