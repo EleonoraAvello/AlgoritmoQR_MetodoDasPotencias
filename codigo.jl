@@ -77,9 +77,6 @@ function algoritmo_QR(M::Matrix, tol = 1e-10)
                 if i != j && abs(M[i,j]) > tol
                     diagonal = false
                 end
-                if i != j && abs(M[i,j]) < tol
-                    M[i,j] = 0.0  
-                end
             end
         end
         # se M não é diagonal, então
