@@ -96,6 +96,7 @@ end
 
 # exemplo com uma matriz 3X3 não diagonal:
 algoritmo_QR([1 1 1; 1 2 1; 1 1 3])
+
 """
 Seja A a matriz de entrada.
 
