@@ -1,7 +1,6 @@
 using LinearAlgebra
 
 include("Fatoracao_QR.jl")
-include("Resposta.jl")
 
 function algoritmo_QR(E::Matrix, tol = 1e-10)
     # E deve ser uma matriz quadrada
@@ -35,5 +34,5 @@ function algoritmo_QR(E::Matrix, tol = 1e-10)
         X = X * Q
         iter = iter + 1
     end
-  resposta(E, M, X, iter)
+    return E, M, X, iter
 end
