@@ -1,6 +1,7 @@
 include("Algoritmo_QR.jl")
+include("Metodo_potencias.jl")
 
-# A função deverá ser chamado no terminal com a matriz que se 
+# A função deverá ser chamada no terminal com a matriz que se 
 # deseja os respectivos resultados
 
 # Chamada de exemplo: autovalores([1 1 1; 1 2 1; 1 1 3])
@@ -41,17 +42,17 @@ function autovetoresRef(E::Matrix)
   end
 end
 
-function iteracoes(E::Matrix)
+function iteracoes_QR(E::Matrix)
   E, M, X, iter = algoritmo_QR(E)
   return iter
 end
 
-function tudo(E::Matrix)
+function tudo_QR(E::Matrix)
   E, M, X, iter = algoritmo_QR(E)
   return E, M, X, iter
 end 
 
-function tudoRef(E::Matrix)
+function tudo_QR_Ref(E::Matrix)
   E, M, X, iter = algoritmo_QR(E)
 
   mE, nE = size(E)
@@ -84,3 +85,23 @@ function tudoRef(E::Matrix)
   println("")
   println(iter)
 end
+
+function autovalor_dominante(E::Matrix)
+  λ, y0, iter = metodo_potencias(E)
+  return λ
+end
+
+function autovetor_dominante(E::Matrix)
+  λ, y0, iter = metodo_potencias(E)
+  return y0
+end
+
+function iteracoes_potencia(E::Matrix)
+  λ, y0, iter = metodo_potencias(E)
+  return iter
+end
+
+function tudo_potencia(E::Matrix)
+  return metodo_potencias(E)
+end
+
