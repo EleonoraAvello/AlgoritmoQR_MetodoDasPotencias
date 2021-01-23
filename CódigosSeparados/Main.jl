@@ -96,12 +96,12 @@ function autovetor_dominante(E::Matrix)
   return y0
 end
 
-function iteracoes_potencia(E::Matrix)
+function iteracoes_potencias(E::Matrix)
   λ, y0, iter = metodo_potencias(E)
   return iter
 end
 
-function tudo_potencia(E::Matrix)
+function tudo_potencias(E::Matrix)
   return metodo_potencias(E)
 end
 
